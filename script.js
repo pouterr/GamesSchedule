@@ -159,21 +159,3 @@ scrollTopButton.addEventListener('click', function(){
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 });
-
-document.getElementById('searchForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting in the traditional way
-    var searchQuery = document.getElementById('searchBar').value;
-    
-    // You can process the search query here
-    console.log('Search Query:', searchQuery);
-    
-    // For example, redirect to a search results page (if you have one)
-    // window.location.href = '/search-results.html?query=' + encodeURIComponent(searchQuery);
-
-    // Or, you can make an AJAX call to your server to fetch/search data
-    // fetch('/search?query=' + encodeURIComponent(searchQuery))
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     // Process and display the search results
-    //   });
-});

@@ -87,44 +87,66 @@
 
     <!-- Page Content -->
     <div class="container my-5 ">
-      <h1 class="text-center ">Contact Us</h1>
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <!-- Contact Form -->
-          <form>
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+      <div id="step1">
+        <h1 class="text-center ">Contact Us</h1>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <!-- Contact Form -->
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+              </div>
+              <!-- Dropdown Button -->
+              <div class="mb-3">
+                <label for="subjectDropdown" class="form-label">Subject</label>
+                <select class="form-select" id="subjectDropdown" required>
+                  <option selected disabled value="">Choose...</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="support">Support</option>
+                  <option value="sales">Sales</option>
+                  <option value="feedback">Feedback</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Your message here" required></textarea>
+              </div>
+              <div class="d-grid">
+                <!-- <button type="submit" class="btn btn-dark btn-lg">Send Message</button> -->
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="d-grid mb-3">
+                    <button type="button" class="btn btn-dark btn-lg" onclick="goToStep(2)">Next</button>
+                </div>
             </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        </div>
+      </div>
+
+      <div id="step2" style="display: none;">
+        <h2 class="text-center">Prove You Are Human By Solving This Puzzle</h2>
+        <div id="board"></div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="d-grid mb-3">
+                    <button type="button" class="btn btn-dark btn-lg" onclick="goToStep(1)">Previous</button>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-dark btn-lg">Send Message</button>
+                </div>
             </div>
-            <!-- Dropdown Button -->
-            <div class="mb-3">
-              <label for="subjectDropdown" class="form-label">Subject</label>
-              <select class="form-select" id="subjectDropdown" required>
-                <option selected disabled value="">Choose...</option>
-                <option value="general">General Inquiry</option>
-                <option value="support">Support</option>
-                <option value="sales">Sales</option>
-                <option value="feedback">Feedback</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" rows="3" placeholder="Your message here" required></textarea>
-            </div>
-            <div class="d-grid">
-              <button type="submit" class="btn btn-dark btn-lg">Send Message</button>
-            </div>
-          </form>
         </div>
       </div>
     </div>
-    <!-- Puzzle Verification Section -->
-    <h2 class="text-center">Prove You Are Human By Solving This Puzzle</h2>
-    <div id="board"></div>
+    
     
     
 </div>

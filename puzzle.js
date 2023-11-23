@@ -1,3 +1,11 @@
+function goToStep(step) {
+    // Hide all steps
+    document.getElementById("step1").style.display = "none";
+    document.getElementById("step2").style.display = "none";
+
+    // Show the current step
+    document.getElementById("step" + step).style.display = "block";
+}
 var rows = 3;
 var columns = 3;
 

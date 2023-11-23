@@ -367,3 +367,18 @@ progress::-moz-progress-bar {
     border: 1px solid #888;
     width: 80%;
 }
+
+.quiz-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#ronaldoQuiz {
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+}
