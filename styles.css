@@ -3,7 +3,14 @@ html, body {
     margin: 0;
 }
 
-
+#scrollTopButton {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/Sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+  }
+  
 
 
 .wrapper {
@@ -216,4 +223,147 @@ canvas {
 .card-img-top-container {
     position: relative;
     display: inline-block; 
+}
+
+.search-container {
+    position: relative;
+    width: 100px; /* initial width */
+}
+
+.search-container input {
+    width: 100%;
+    border: 0;
+    padding: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 10px; /* Optional: adds space between buttons */
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column;
+    }
+}
+
+progress {
+    width: 100%;
+    height: 20px; /* Adjust as needed */
+}
+
+/* Style for different browsers */
+progress::-webkit-progress-bar {
+    background-color: #eee;
+}
+
+progress::-webkit-progress-value {
+    background-color: #007bff;
+}
+
+progress::-moz-progress-bar {
+    background-color: #007bff;
+}
+
+#modal_buttons {
+    margin-bottom: 10px;
+}
+#bgVideo {
+    width: 100%; /* Make the video fill its container */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 100%; /* Limit the maximum width */
+}
+
+/* Optional: Container to control video size */
+.video-container {
+    width: 100%; /* Adjust this as needed */
+    max-width: 800px; /* Maximum size of the video */
+    margin: auto; /* Center the video container */
+}
+
+.video-container {
+    width: 100%; /* Adjust this as needed */
+    max-width: 800px; /* Maximum size of the video */
+    margin: auto; /* Center the video container */
+}
+
+#bgVideo, #videoProgress {
+    width: 100%; /* Make the video and progress bar fill its container */
+    height: auto; /* Maintain the aspect ratio for the video */
+}
+
+/* Additional styling for the progress bar */
+#videoProgress {
+    display: block; /* Ensure it's not inline */
+    height: 20px; /* Adjust the height as needed */
+    -webkit-appearance: none; /* Removes default webkit styles */
+    appearance: none;
+}
+
+/* You can add browser-specific styles for the progress bar here */
+
+.quiz-step {
+    display: none;
+}
+
+.quiz-step:first-child {
+    display: block;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
 }

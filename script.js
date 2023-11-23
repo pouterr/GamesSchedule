@@ -23,6 +23,32 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+document.getElementById('searchBar').addEventListener('focus', function() {
+    animateWidth(this, 200, 300); // Expands to 200px over 300 milliseconds
+});
+
+document.getElementById('searchBar').addEventListener('blur', function() {
+    animateWidth(this, 100, 300); // Contracts to 50px over 300 milliseconds
+});
+
+function animateWidth(element, targetWidth, duration) {
+    var startWidth = element.offsetWidth;
+    var startTime = Date.now();
+
+    function animate() {
+        var elapsedTime = Date.now() - startTime;
+        var width = startWidth + (targetWidth - startWidth) * Math.min(elapsedTime / duration, 1);
+
+        element.style.width = width + 'px';
+
+        if (elapsedTime < duration) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
+
 document.getElementById('playAudio').addEventListener('click', function() {
     var audio = new Audio('ronaldo-siuuuu.mp3'); 
     audio.play();
@@ -116,4 +142,38 @@ function step(timestamp) {
 requestAnimationFrame(step); // Start the animation
 }
   
-  
+// Get the button
+var scrollTopButton = document.getElementById("scrollTopButton");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    scrollTopButton.style.display = "block";
+  } else {
+    scrollTopButton.style.display = "none";
+  }
+};
+
+// When the user clicks on the button, scroll to the top of the document
+scrollTopButton.addEventListener('click', function(){
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+});
+
+document.getElementById('searchForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting in the traditional way
+    var searchQuery = document.getElementById('searchBar').value;
+    
+    // You can process the search query here
+    console.log('Search Query:', searchQuery);
+    
+    // For example, redirect to a search results page (if you have one)
+    // window.location.href = '/search-results.html?query=' + encodeURIComponent(searchQuery);
+
+    // Or, you can make an AJAX call to your server to fetch/search data
+    // fetch('/search?query=' + encodeURIComponent(searchQuery))
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     // Process and display the search results
+    //   });
+});
